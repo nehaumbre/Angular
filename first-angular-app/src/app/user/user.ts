@@ -18,9 +18,9 @@ export class User {
   //   return 'assets/users/' + this.selectedUser().avatar; //using signals
   // }
 
-  imagePath = computed(() => {
-    return 'assets/users/' + this.selectedUser().avatar;
-  }); //!using signals and computed values
+  imagePath = computed(() => 
+    'assets/users/' + this.selectedUser().avatar
+  ); //!using signals and computed values
 
   private getRandomUser() {
     const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
