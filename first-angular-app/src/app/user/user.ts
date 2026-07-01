@@ -10,13 +10,19 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
   styleUrl: './user.css',
 })
 export class User {
-  // @Input({required: true}) avatar!:string;
-  // @Input({required: true}) name!:string;
+  //Decorator approach
+  @Input({required: true}) avatar!:string;
+  @Input({required: true}) name!:string;
 
-  avatar = input.required<string>(); // you can set it required too
-  name = input.required<string>();
+  // Signal approach
+  // avatar = input.required<string>(); // you can set it required too
+  // name = input.required<string>();
 
-  imagePath = computed(() => `./assets/users/${this.avatar()}`);
+  // imagePath = computed(() => `./assets/users/${this.avatar()}`);
+
+  get imagePath() {
+    return `./assets/users/${this.avatar}`;
+  }
 
   onSelectedUser() {}
 }
