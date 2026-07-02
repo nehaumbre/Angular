@@ -14,8 +14,8 @@ export class User {
   @Input({ required: true }) id!: string;
   @Input({ required: true }) avatar!: string;
   @Input({ required: true }) name!: string;
-  // @Output() select = new EventEmitter();
-  select = output<string>(); //! using output function
+  @Output() select = new EventEmitter<string>();
+  // select = output<string>(); //! using output function
 
   // Signal approach
   // avatar = input.required<string>(); // you can set it required too
