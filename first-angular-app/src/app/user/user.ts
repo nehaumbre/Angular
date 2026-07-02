@@ -1,4 +1,4 @@
-import { Component, signal, computed, Input, input } from '@angular/core';
+import { Component, signal, computed, Input, input, Output, EventEmitter } from '@angular/core';
 
 import { DUMMY_USERS } from '../dummy-users';
 
@@ -11,8 +11,10 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 })
 export class User {
   //Decorator approach
-  @Input({required: true}) avatar!:string;
-  @Input({required: true}) name!:string;
+  @Input({ required: true }) id!: string;
+  @Input({ required: true }) avatar!: string;
+  @Input({ required: true }) name!: string;
+  @Output() select = new EventEmitter();
 
   // Signal approach
   // avatar = input.required<string>(); // you can set it required too
@@ -24,5 +26,7 @@ export class User {
     return `./assets/users/${this.avatar}`;
   }
 
-  onSelectedUser() {}
+  onSelectedUser() {
+    this.select.emit(this.id)
+  }
 }
