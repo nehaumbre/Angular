@@ -4,8 +4,14 @@ import { DUMMY_USERS } from '../dummy-users';
 
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
+// Type Aliases
+// type Player = {
+//     id: string;
+//     avatar: string;
+//     name: string;
+//   }
 
-type Player = {
+interface Player {
     id: string;
     avatar: string;
     name: string;
