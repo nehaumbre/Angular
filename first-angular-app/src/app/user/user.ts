@@ -4,6 +4,13 @@ import { DUMMY_USERS } from '../dummy-users';
 
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
+
+type Player = {
+    id: string;
+    avatar: string;
+    name: string;
+  }
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.html',
@@ -11,9 +18,10 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 })
 export class User {
   //Decorator approach
-  @Input({ required: true }) id!: string;
-  @Input({ required: true }) avatar!: string;
-  @Input({ required: true }) name!: string;
+  // @Input({ required: true }) id!: string;
+  // @Input({ required: true }) avatar!: string;
+  // @Input({ required: true }) name!: string;
+  @Input ({required : true}) user! : Player
   @Output() select = new EventEmitter<string>();
   // select = output<string>(); //! using output function
 
@@ -24,10 +32,10 @@ export class User {
   // imagePath = computed(() => `./assets/users/${this.avatar()}`);
 
   get imagePath() {
-    return `./assets/users/${this.avatar}`;
+    return `./assets/users/${this.user.avatar}`;
   }
 
   onSelectedUser() {
-    this.select.emit(this.id)
+    this.select.emit(this.user.id)
   }
 }
