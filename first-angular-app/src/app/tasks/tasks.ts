@@ -1,15 +1,17 @@
 import { Component, EventEmitter, Output, Input } from '@angular/core';
 import {Task} from './task/task';
+import { NewTask } from './new-task/new-task';
 
 @Component({
   selector: 'app-tasks',
-  imports: [Task],
+  imports: [Task, NewTask],
   templateUrl: './tasks.html',
   styleUrl: './tasks.css',
 })
 export class Tasks {
   @Input({ required: true }) userId!: string | undefined;
   @Input({ required: true }) name!: string | undefined;
+  isAddingTask = false;
 
   dummyTasks = [
     {
@@ -48,5 +50,9 @@ export class Tasks {
 
   onTaskComplete(id:string){
     this.dummyTasks = this.dummyTasks.filter((task) => task.id !== id);
+  }
+
+  onStartAddTask(){
+    this.isAddingTask = true;
   }
 }
