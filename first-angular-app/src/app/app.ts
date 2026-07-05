@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, User, Tasks, Task, CommonModule],
+  imports: [HeaderComponent, User, Tasks, CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

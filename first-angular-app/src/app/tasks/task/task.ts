@@ -1,4 +1,5 @@
 import { Component,input } from '@angular/core';
+import { type TaskData } from './task.model';
 
 @Component({
   selector: 'app-task',
@@ -7,11 +8,5 @@ import { Component,input } from '@angular/core';
   styleUrl: './task.css',
 })
 export class Task {
-  task = input.required<{
-    id: string;
-    userId: string;
-    title: string;
-    summary: string;
-    dueDate: string;
-  }>();
+  task = input.required<TaskData>();
 }
