@@ -8,7 +8,7 @@ import {Task} from './task/task';
   styleUrl: './tasks.css',
 })
 export class Tasks {
-  @Input({required: true}) userId!: string | undefined;
+  @Input({ required: true }) userId!: string | undefined;
   @Input({ required: true }) name!: string | undefined;
 
   dummyTasks = [
@@ -32,6 +32,13 @@ export class Tasks {
       title: 'Prepare issue template',
       summary: 'Prepare and describe an issue template which will help with project management',
       dueDate: '2024-06-15',
+    },
+    {
+      id: 't4',
+      userId: 'u1',
+      title: 'Make Changes',
+      summary: 'Make the necessary changes to the application.',
+      dueDate: '2025-12-31',
     },
   ];
 
