@@ -4,11 +4,12 @@ import { HeaderComponent } from './header/header';
 import { User } from "./user/user";
 import { DUMMY_USERS } from './dummy-users';
 import { Tasks } from './tasks/tasks';
+import {Task} from './tasks/task/task';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, User, Tasks, CommonModule],
+  imports: [HeaderComponent, User, Tasks, Task, CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
