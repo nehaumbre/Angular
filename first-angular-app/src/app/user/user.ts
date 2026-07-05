@@ -30,6 +30,7 @@ export class User {
   // @Input({ required: true }) name!: string;
   @Input ({required : true}) user! : Player
   @Output() select = new EventEmitter<string>();
+  @Input({ required: true }) selected!: boolean;
   // select = output<string>(); //! using output function
 
   // Signal approach

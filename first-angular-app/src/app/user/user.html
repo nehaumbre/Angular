@@ -1,5 +1,5 @@
 <div>
-  <button (click)="onSelectedUser()">
+  <button  [class.active]="selected" (click)="onSelectedUser()">
     <img [src]="imagePath" [alt]="user.name" />
     <!--when using computed values for imagepath in signals use imagePath() if not use imagePath   -->
     <!--  above code is when we using signals  use () to call selectedUser().name instead of selectedUser.name-->
