@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output, Input } from '@angular/core';
 import {Task} from './task/task';
 import { NewTask } from './new-task/new-task';
+import { type NewTaskData } from './task/task.model';
 
 @Component({
   selector: 'app-tasks',
@@ -9,7 +10,7 @@ import { NewTask } from './new-task/new-task';
   styleUrl: './tasks.css',
 })
 export class Tasks {
-  @Input({ required: true }) userId!: string | undefined;
+  @Input({ required: true }) userId!: string ;
   @Input({ required: true }) name!: string | undefined;
   isAddingTask = false;
 
@@ -58,5 +59,16 @@ export class Tasks {
 
   onCancelAddTask(){
     this.isAddingTask = false;
+  }
+
+  onAddTask(taskData: NewTaskData){
+    this.dummyTasks.unshift({
+      id: new Date().getTime().toString(),
+      userId: this.userId,
+      title: taskData.title,
+      summary: taskData.summary,
+      dueDate: taskData.dueDate,
+  })
+    this.isAddingTask = false; // to close the dailog
   }
 }
