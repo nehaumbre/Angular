@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output, Input } from '@angular/core';
 import {Task} from './task/task';
 import { NewTask } from './new-task/new-task';
 import { type NewTaskData } from './task/task.model';
+import { TasksService } from './tasks.service';
 
 @Component({
   selector: 'app-tasks',
@@ -13,6 +14,9 @@ export class Tasks {
   @Input({ required: true }) userId!: string ;
   @Input({ required: true }) name!: string ;
   isAddingTask = false;
+  // private tasksService = new TasksService();
+
+  constructor(private tasksService: TasksService) {}
 
   // dummyTasks = [
   //   {
@@ -45,19 +49,22 @@ export class Tasks {
   //   },
   // ];
 
-  // get selectedUserTasks() {
-  //   return this.dummyTasks.filter((task) => task.userId === this.userId);
-  // }
+  get selectedUserTasks() {
+    // return this.dummyTasks.filter((task) => task.userId === this.userId);
+    return this.tasksService.getUserTasks(this.userId);
+  }
 
   // onTaskComplete(id:string){
   //   this.dummyTasks = this.dummyTasks.filter((task) => task.id !== id);
   // }
 
+  onTaskComplete(id:string){}
+
   onStartAddTask(){
     this.isAddingTask = true;
   }
 
-  onCancelAddTask(){
+  onClosedAddTask(){
     this.isAddingTask = false;
   }
 

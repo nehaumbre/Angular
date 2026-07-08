@@ -2,7 +2,11 @@
 // ! It can be used to share data and logic across multiple components.
 // ! In this case, the TasksService is responsible for managing the list of tasks in the application.
 import { type NewTaskData } from "./task/task.model";
-class TasksService {
+import { Injectable } from "@angular/core";
+@Injectable({
+  providedIn: 'root'
+})
+export class TasksService {
   private dummyTasks = [
     {
       id: 't1',
