@@ -58,7 +58,7 @@ export class Tasks {
   //   this.dummyTasks = this.dummyTasks.filter((task) => task.id !== id);
   // }
 
-  onTaskComplete(id:string){}
+  // onTaskComplete(id:string){}
 
   onStartAddTask(){
     this.isAddingTask = true;
