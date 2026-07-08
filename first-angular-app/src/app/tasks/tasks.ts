@@ -14,44 +14,44 @@ export class Tasks {
   @Input({ required: true }) name!: string ;
   isAddingTask = false;
 
-  dummyTasks = [
-    {
-      id: 't1',
-      userId: 'u1',
-      title: 'Master Angular',
-      summary: 'Learn all the basic and advanced features of Angular & how to apply them.',
-      dueDate: '2025-12-31',
-    },
-    {
-      id: 't2',
-      userId: 'u3',
-      title: 'Build first prototype',
-      summary: 'Build a first prototype of the online shop website',
-      dueDate: '2024-05-31',
-    },
-    {
-      id: 't3',
-      userId: 'u7',
-      title: 'Prepare issue template',
-      summary: 'Prepare and describe an issue template which will help with project management',
-      dueDate: '2024-06-15',
-    },
-    {
-      id: 't4',
-      userId: 'u1',
-      title: 'Make Changes',
-      summary: 'Make the necessary changes to the application.',
-      dueDate: '2025-12-31',
-    },
-  ];
+  // dummyTasks = [
+  //   {
+  //     id: 't1',
+  //     userId: 'u1',
+  //     title: 'Master Angular',
+  //     summary: 'Learn all the basic and advanced features of Angular & how to apply them.',
+  //     dueDate: '2025-12-31',
+  //   },
+  //   {
+  //     id: 't2',
+  //     userId: 'u3',
+  //     title: 'Build first prototype',
+  //     summary: 'Build a first prototype of the online shop website',
+  //     dueDate: '2024-05-31',
+  //   },
+  //   {
+  //     id: 't3',
+  //     userId: 'u7',
+  //     title: 'Prepare issue template',
+  //     summary: 'Prepare and describe an issue template which will help with project management',
+  //     dueDate: '2024-06-15',
+  //   },
+  //   {
+  //     id: 't4',
+  //     userId: 'u1',
+  //     title: 'Make Changes',
+  //     summary: 'Make the necessary changes to the application.',
+  //     dueDate: '2025-12-31',
+  //   },
+  // ];
 
-  get selectedUserTasks() {
-    return this.dummyTasks.filter((task) => task.userId === this.userId);
-  }
+  // get selectedUserTasks() {
+  //   return this.dummyTasks.filter((task) => task.userId === this.userId);
+  // }
 
-  onTaskComplete(id:string){
-    this.dummyTasks = this.dummyTasks.filter((task) => task.id !== id);
-  }
+  // onTaskComplete(id:string){
+  //   this.dummyTasks = this.dummyTasks.filter((task) => task.id !== id);
+  // }
 
   onStartAddTask(){
     this.isAddingTask = true;
@@ -61,14 +61,14 @@ export class Tasks {
     this.isAddingTask = false;
   }
 
-  onAddTask(taskData: NewTaskData){
-    this.dummyTasks.unshift({
-      id: new Date().getTime().toString(),
-      userId: this.userId,
-      title: taskData.title,
-      summary: taskData.summary,
-      dueDate: taskData.dueDate,
-  })
-    this.isAddingTask = false; // to close the dailog
-  }
+  // onAddTask(taskData: NewTaskData){
+  //   this.dummyTasks.unshift({
+  //     id: new Date().getTime().toString(),
+  //     userId: this.userId,
+  //     title: taskData.title,
+  //     summary: taskData.summary,
+  //     dueDate: taskData.dueDate,
+  // })
+  //   this.isAddingTask = false; // to close the dailog
+  // }
 }
