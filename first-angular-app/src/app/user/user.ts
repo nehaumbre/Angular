@@ -20,7 +20,7 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 //   }
 
 @Component({
-  imports: [Card],
+  // imports: [Card],
   selector: 'app-user',
   templateUrl: './user.html',
   styleUrl: './user.css',
