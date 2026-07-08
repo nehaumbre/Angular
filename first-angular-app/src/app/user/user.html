@@ -1,4 +1,4 @@
-<div>
+<!-- <app-card> -->
   <button  [class.active]="selected" (click)="onSelectedUser()">
     <img [src]="imagePath" [alt]="user.name" />
     <!--when using computed values for imagepath in signals use imagePath() if not use imagePath   -->
@@ -6,4 +6,4 @@
     <!--  <img [src]="imagePath" [alt]="selectedUser().name" /> -->
     <span>{{ user.name }}</span>
   </button>
-</div>
+<!-- </app-card> -->

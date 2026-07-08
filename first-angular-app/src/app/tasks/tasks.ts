@@ -11,7 +11,7 @@ import { type NewTaskData } from './task/task.model';
 })
 export class Tasks {
   @Input({ required: true }) userId!: string ;
-  @Input({ required: true }) name!: string | undefined;
+  @Input({ required: true }) name!: string ;
   isAddingTask = false;
 
   dummyTasks = [

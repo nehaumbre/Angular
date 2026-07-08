@@ -2,6 +2,7 @@ import { Component, signal, computed, Input, input, Output, EventEmitter, output
 
 import { DUMMY_USERS } from '../dummy-users';
 import { Player } from './user.model';
+import { Card } from '../shared/card/card';
 
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
@@ -19,6 +20,7 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 //   }
 
 @Component({
+  imports: [Card],
   selector: 'app-user',
   templateUrl: './user.html',
   styleUrl: './user.css',

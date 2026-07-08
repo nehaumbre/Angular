@@ -19,7 +19,7 @@ export class App {
   // selectedUserName = 'Jasmine Washington';
 
   selectedUserName?: string;
-  selectedUserId?: string;
+  selectedUserId!: string;
 
    // by using ? we are saying that this property can be undefined, 
    // so we don't need to give it an initial value. It will be set when a user is selected.
